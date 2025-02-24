@@ -11,8 +11,14 @@ class DataVisualizer:
         :param save_dir: Директория для сохранения графиков
         """
         self.df = df
-        self.save_dir = save_dir
-        os.makedirs(save_dir, exist_ok=True)  # Создаем папку, если ее нет
+        # Определяем путь к директории, где находится сам скрипт
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+
+        # Если директория для сохранения не задана, создаем "plots" рядом с файлом
+        self.save_dir = save_dir if save_dir else os.path.join(script_dir, "plots")
+
+        # Создаем папку, если ее нет
+        os.makedirs(self.save_dir, exist_ok=True)
 
     def plot_histogram(self, column, bins=10, color='blue', save=False):
         """
