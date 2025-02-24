@@ -1,0 +1,94 @@
+# IntelliJ IDEA / DataSpell
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+gradle/wrapper/gradle-wrapper.properties
+
+# Maven
+.mvn/
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+dependency-reduced-pom.xml
+release.properties
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Virtual Environment
+venv/
+.env/
+.envrc
+python-env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Database & Data
+*.sqlite
+*.sqlite3
+db.sqlite3
+data/
+*.csv
+*.json
+
+# IDE-specific
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Java-specific
+*.class
+*.jar
+*.war
+*.ear
+
+# Application properties (Sensitive Data)
+application*.yml
+application*.properties
+.env
+
+# Coverage & Testing
+coverage/
+*.cover
+*.lcov
+.nyc_output/
+htmlcov/
+coverage.xml
+test-output/
+
+# Docker & Kubernetes
+docker-compose.override.yml
+*.pid
+*.seed
+*.log
+
+# Misc
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+cache/
+tmp/
