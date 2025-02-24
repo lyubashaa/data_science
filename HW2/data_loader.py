@@ -1,39 +1,24 @@
-from urllib import response
-
 import pandas as pd
 import requests
 
-
-# класс LoadData
 class LoadData:
     def __init__(self):
+        pass  # Здесь не нужны вложенные функции
 
-        def load_csv(self, file_path):
-            """
-            Загружает CSV-файл по указанному пути с помощью библиотеки pandas.
-            """
-            # Загрузка файла с помощью pandas
-            data = pd.read_csv(file_path)
-            print(f"Файл {file_path} успешно загружен.")
-            return data
+    def load_csv(self, file_path):
+        """Загружает CSV-файл по указанному пути с помощью pandas."""
+        df = pd.read_csv(file_path)
+        print(f"Файл {file_path} успешно загружен.")
+        return df
 
+    def load_json(self, file_path):
+        """Загружает JSON-файл по указанному пути с помощью pandas."""
+        df = pd.read_json(file_path)
+        print(f"Файл {file_path} успешно загружен.")
+        return df
 
-        def load_json(self, file_path):
-            """
-            Загружает Json-файл по указанному пути с помощью библиотеки pandas.
-            """
-            # Загрузка файла с помощью pandas
-            data = pd.read_json(file_path)
-            print(f"Файл {file_path} успешно загружен.")
-            return data
-
-
-        def load_API(self, file_url):
-            """
-            Создает запрос GET.
-            """
-            data = requests.get(file_url)
-            # Вывод кода
-            print(response.status_code)
-            # Вывод ответа, полученного от сервера API
-            print(response.json())
+    def load_API(self, file_url):
+        """Создает запрос GET к API."""
+        response = requests.get(file_url)
+        print(response.status_code)
+        print(response.json())

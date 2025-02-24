@@ -7,12 +7,12 @@ sns.set(style="whitegrid")
 
 class DataVisualizer:
 
-    def __init__(self):
-        self.data = data
+    def __init__(self, df):
+        self.df = df
 
-    def hist(data):
+    def hist(df):
         # создание гистограмм для каждой числовой переменной
-        data.hist(bins=20, figsize=(15, 10), color='skyblue', edgecolor='black')
+        df.hist(bins=20, figsize=(15, 10), color='skyblue', edgecolor='black')
 
         # Добавление названий для каждого графика и осей
         for ax in plt.gcf().get_axes():
