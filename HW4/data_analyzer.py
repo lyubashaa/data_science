@@ -1,9 +1,11 @@
 import pandas as pd
 
+import pandas as pd
+
 class MissingValuesHandler:
     def __init__(self, df):
         """
-        Класс для работы с пропущенными значениями в DataFrame.
+        Класс для работы с пропущенными значениями и дубликатами в DataFrame.
         """
         if not isinstance(df, pd.DataFrame):
             raise ValueError("Ошибка: Переданный объект не является DataFrame.")
@@ -61,3 +63,22 @@ class MissingValuesHandler:
         """Удаляет указанные столбцы из DataFrame."""
         self.df = self.df.drop(columns=columns_to_remove, errors='ignore')
         return self.df  # Возвращаем обновленный DataFrame
+
+    def find_duplicates(self):
+        """
+        Находит дубликаты в DataFrame.
+        """
+        duplicates = self.df[self.df.duplicated()]
+        print(f"\n Найдено {duplicates.shape[0]} дубликатов.")
+        return duplicates
+
+    def drop_duplicates(self):
+        """
+        Удаляет дубликаты из DataFrame.
+        """
+        before_drop = self.df.shape[0]
+        self.df.drop_duplicates(inplace=True)
+        after_drop = self.df.shape[0]
+
+        print(f"\n Удалено {before_drop - after_drop} дубликатов.")
+
